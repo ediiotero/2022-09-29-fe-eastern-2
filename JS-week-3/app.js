@@ -2,20 +2,20 @@
 // and store the response in an array and console.log or alert
 //  the answers when the loop is done
 
-// const questions = [
-//     "What is your name?", 
-//     "What is your favorite color?", 
-//     "What city are you in?"
-// ];
+const questions = [
+    "What is your name?", 
+    "What is your favorite color?", 
+    "What city are you in?"
+];
 
-// const answers = [];
+const answers = [];
 
-// for (let i = 0; i < questions.length; i++) {
-//     const a = prompt(questions[i])
-//     answers.push(a)
-// }
+for (let i = 0; i < questions.length; i++) {
+    const a = prompt(questions[i])
+    answers.push(a)
+}
 
-// alert(answers)
+alert(answers)
 
 // =====================
 
