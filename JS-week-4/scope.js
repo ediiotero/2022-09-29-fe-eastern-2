@@ -8,7 +8,7 @@ var test2 = 'Coding'
 
 function testScopeGlobal() {
     if(true){
-        // test = 'Hello'
+        test = 'Hello'
         console.log(`global: `, test2)
     }
     console.log(`test is: `, test)
@@ -29,6 +29,7 @@ function testScopeGlobal() {
 function testScopeLet() {
     if(true){
         let test3 = 'World'
+        // console.log(`if block: ${test3}`)
     }
     console.log(`let: `, test3)
 }
@@ -69,10 +70,9 @@ function myFunction() {
     }
 };
 
-// console.log(carName)
-// console.log(varName)
+console.log(carName)
 
-// myFunction()
+myFunction()
   
   // code here can NOT use carName
 

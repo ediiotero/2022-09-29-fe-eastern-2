@@ -2,6 +2,24 @@
 // You must check that the users inputs is a number if it isn't alter the user 
 // and prompt the user again
 
+const getNumbers = () => {
+    let currentCount = 0;
+
+    for (let i = 0; i < 3; i++) {
+        let question = parseInt(prompt("Pick a number"))
+
+        while(isNaN(question)) {
+            question = parseInt(prompt("Pick a number"))
+        }
+
+        currentCount = currentCount + question;
+    }
+
+    return currentCount * 3;
+}
+
+// console.log(getNumbers())
+
 
 
 
@@ -16,7 +34,18 @@
 
 const list = ["My name is ", "I live in ", "My favorite food is "];
 
+const combine = (sentence, word) => {
+    return `${sentence} ${word}`
+}
 
+const finishSentence = (array, callback) => {
+    for (let i = 0; i < array.length; i++) {
+        const word = prompt(array[i])
+        alert(callback(array[i], word))
+    }
+}
+
+// finishSentence(list, combine);
 
 // ============================================
 
@@ -28,6 +57,18 @@ const list = ["My name is ", "I live in ", "My favorite food is "];
 // Use the promise to alert "you win" if resolved
 // and "you lose" if rejected
 
+const myPromise = new Promise((resolve, reject) => {
+    const guess = prompt("Guess a number")
+    setTimeout(() => {
+        if(guess >= 10) {
+            resolve("You win!")
+        } else {
+            reject("You lose!")
+        }
+    }, 3000)
+})
+
+myPromise.then(value => alert(value)).catch(value => alert(value))
 
 
 
@@ -45,10 +86,11 @@ const list = ["My name is ", "I live in ", "My favorite food is "];
 
 
 
-x = 5;
-console.log(x)
-var x;
 
-y = 6;
-console.log(y)
-let y;
+// x = 5;
+// console.log(x)
+// var x;
+
+// y = 6;
+// console.log(y)
+// let y;
