@@ -4,3 +4,57 @@
 // and another to convert celsius to kelvin->   celsius + 273.15
 // create 2 new object with this class
 
+class Temperature {
+    constructor(fahrenheit) {
+        if(fahrenheit <= 212 && fahrenheit >= -459.67) {
+            this.fahrenheit = fahrenheit
+        }else {
+            console.error(`${fahrenheit} is not a valid fahrenheit temperature`)
+        }
+    }
+
+    celsius() {
+        const fahrenheitInC = ((this.fahrenheit - 32)*5)/9
+        return fahrenheitInC;
+    }
+
+    kelvin() {
+        const celsius = this.celsius();
+        return celsius + 273.15
+    }
+}
+
+const temp = new Temperature(100)
+
+console.log(temp)
+console.log(temp.celsius().toFixed(2))
+console.log(temp.kelvin().toFixed(2))
+
+const players = ['Eddie', 'Adam', 'Jennifer', 'Stephanie', 'Cody']
+const positions = ['captain', 'guard', 'forward', 'center']
+
+const teams = [];
+
+positions.forEach(position => {
+    players.map(player => teams.push({player, position}))
+})
+
+console.log(teams)
+
+function shuffle(array) {
+    const teamOne = [];
+    const teamTwo = [];
+
+    while(array.length > 0){
+        const random1 = Math.floor(Math.random() * array.length);
+        const getItem1 = array.splice(random1,1);
+        const random2 = Math.floor(Math.random() * array.length);
+        const getItem2 = array.splice(random2,1);
+        teamOne.push(getItem1);
+        teamTwo.push(getItem2);
+    }
+    console.log('Team One: ', teamOne)
+    return [teamOne.flat(), teamTwo.flat()];
+}
+
+console.log(shuffle(teams));
